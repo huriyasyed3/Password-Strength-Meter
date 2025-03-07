@@ -63,7 +63,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # User Password Input
-password = st.text_input("🔑 Enter your password:", type="password")
+password = st.text_input("🔑 Enter your password:", type="password", )
 
 if password:
     strength_score, strength_msg, suggestions = check_password_strength(password)
@@ -109,22 +109,23 @@ st.markdown("""
     /* Buttons */
     .stButton>button {
         background: linear-gradient(90deg, #ff007f, #ff4f00);
-        color: white;
+         color: white !important;   /* Ensure text is visible */
+         font-weight: bold;   /* Make text bold */
         width: 100%;
         border-radius: 8px;
         transition: 0.3s;
         font-size: 16px;
-        font-weight: bold;
         padding: 10px;
         border: none;
-        box-shadow: 0px 4px 10px rgba(255, 79, 0, 0.3);
+        
     }
 
-    .stButton>button:hover {
-        background: linear-gradient(90deg, #ff4f00, #ff007f);
-        transform: scale(1.05);
-        box-shadow: 0px 6px 15px rgba(255, 79, 0, 0.5);
-    }
+   .stButton>button:hover {
+    background: linear-gradient(90deg, #ff4f00, #ff007f);
+    transform: scale(1.03);
+    box-shadow: 0px 6px 15px rgba(255, 79, 0, 0.5);
+    color: white !important;  /* 👈 Text color fix */
+}
 
     /* Input Box */
     .stTextInput>div>div>input {
